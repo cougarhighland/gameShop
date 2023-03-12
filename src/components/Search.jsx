@@ -17,7 +17,7 @@ function Search(props){
     }
 
     return(
-        <div>
+        <div className="flex-auto">
             <h1>The game store</h1>
             <div>
                 <input className="ba b--black-20 pa2 mb2 db w-50" type="search" placeholder="Search..." onChange={handleOnChange} />
