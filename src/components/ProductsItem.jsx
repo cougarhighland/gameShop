@@ -13,7 +13,7 @@ function ProductsItem(props) {
 
   const context = useContext(CartContext);
     return(
-        <div className="tc w-50 pa3 ma2 flex items-center justify-between">
+        <div className="tc w-100 pa3 ma2 flex items-center justify-between">
           <div className="flex">
           <img className="br-20 h4 w4 dib" alt={props.product.name} src={process.env.PUBLIC_URL + props.product.imgPath} />
           <div className="w5 ml3">

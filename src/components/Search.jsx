@@ -17,12 +17,12 @@ function Search(props){
     }
 
     return(
-        <div className="flex-auto">
+        <div className="flex items-center justify-center h-100">
+            <div className="w-auto">
             <h1>The game store</h1>
-            <div>
-                <input className="ba b--black-20 pa2 mb2 db w-50" type="search" placeholder="Search..." onChange={handleOnChange} />
+                <input className="ba b--black-20 pa2 mb2 db w-100" type="search" placeholder="Search..." onChange={handleOnChange} />
+                <ProductsList productsList={filteredProducts} />
             </div>
-            <ProductsList productsList={filteredProducts} />
         </div>
     )
 }
