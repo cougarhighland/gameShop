@@ -1,12 +1,17 @@
 
 import Modal from "./Modal";
-import { useState } from "react";
+import { useContext, useState } from "react";
+
+import { ACTIONS } from "./CartReducer";
+import { CartContext } from "../App";
 
 function ProductsItem(props) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const handleOnClickDetail = () => {setModalIsOpen(true);};
   const handleOnClickCloseModal = () => {setModalIsOpen(false);};
   const handleClickOutsideModal = () => {setModalIsOpen(false);};
+
+  const context = useContext(CartContext);
     return(
         <div className="tc w-50 pa3 ma2 flex items-center justify-between">
           <div className="flex">
@@ -18,8 +23,8 @@ function ProductsItem(props) {
           </div>
           </div>
           <div>
-          <p>{props.product.price}</p>
-          <p className="bg-light-gray br3 pa2 ma2 grow shadow-5 outline">Add to Cart</p>
+          <p>{props.product.price} Kr</p>
+          <p className="bg-light-gray br3 pa2 ma2 grow shadow-5 outline" onClick={() =>context.dispatch({type:ACTIONS.ADD, payload:props.product})}>Add to Cart</p>
           </div>
         </div>
       );
